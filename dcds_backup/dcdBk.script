@@ -1,0 +1,26 @@
+#!/bin/bash
+
+source ~/laminarinase/dcdBk.sources
+
+for (( i = 0 ; i < ${#SOURCES[@]} ; i++ ))
+do 
+
+    source=${SOURCES[${i}]}
+    destination=${DESTINATIONS[${i}]}
+
+    index=$(expr index $destination ':')
+    destination_server=${destination:0:$(($index - 1))}
+    destination_directory=${destination:${index}}
+
+    comando='[ -a ${destination_directory} ]'
+
+    if ! ssh ${USER}@${destination_server} eval $comando; then
+         ssh ${USER}@${destination_server} mkdir -p ${destination_directory}
+    fi
+
+    if rsync --append-verify -rutq ${source}/ ${USER}@${destination_server}:${destination_directory}; then
+        echo `date '+%Y%m%d'` >> ${source}/backup_time.log
+        rsync -utq ${source}/backup_time.log ${USER}@${destination_server}:${destination_directory}/backup_time.log
+    fi
+
+done

@@ -1,0 +1,22 @@
+#! /bin/bash
+
+NAME="teste"
+DESTINO="/home/jorge/mestrado/laminarase/códigos/teste"
+
+DCDS_FILE="dcd_files"
+PSF="NONE"
+
+EIGENVECTORS=( 5-9 )
+
+REFERENCE_SELECTION="NONE"
+MOBILITY_SELECTION="NONE"
+
+OUT_EIGENVALUE="yes"
+OUT_EIGENVECTOR="yes"
+QUASI="no"
+OUT_COVARIANCE="no"
+OUT_PROJECTION="no"
+OUT_RMSFCA="no"
+OUT_TRAJECTORY="yes"
+OUT_BINARY="yes"
+OUT_PSF="yes"

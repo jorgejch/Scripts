@@ -1,0 +1,17 @@
+#On the SOURCES array there should be the path to the folders to be backed up, the corresponding destinations should be on the DESTINATIONS array.
+
+#It's important to observe that the path strings should always end with an '/', otherwise rsync will behave badly.
+
+#The destination strings should be in the form "server:path".
+
+SOURCES=(	"/home/erica/laminarinase/2HYK/"
+		"/home/erica/laminarinase/M133C/"
+	)
+
+DESTINATIONS=(	"foo.iqm.unicamp.br:/store7/jorge/laminarase/2HYK/"
+		"foo.iqm.unicamp.br:/store7/jorge/laminarase//M133C/"
+	     )
+
+#This is the user that will ssh on the destination server. It should poses an public key on that server, so that it wont be necessary to type in the password.
+
+USER="Foo"
