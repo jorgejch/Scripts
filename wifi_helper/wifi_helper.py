@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 #################################################
-#author: Jorge Haddad (sumeniac)                #
+#author: Jorge Haddad             #
 #contact: jorgejch@gmail.com        	        	#
 #							        	#
 #last review date: march 2011      			#
